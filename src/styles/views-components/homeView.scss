@@ -1,0 +1,12 @@
+@use "@/styles/base.scss" as *;
+
+.main{
+    @include size(100%, 100%);
+    @include flex($justify: center, $align: center, $direction: row);
+    position: relative;
+    z-index: 1;
+}
+
+.roadMap{
+    @include size(90%, 80%);
+}

@@ -1,0 +1,102 @@
+// font and style text
+
+@mixin font($family, $weight, $size, $color, $transform: none, $decoration: none, $line-height) {
+    font-family: $family;
+    font-weight: $weight;
+    line-height: $line-height;
+    font-size: $size;
+    color: $color;
+    text-transform: $transform;
+    text-decoration: $decoration;
+  }
+  @mixin blurText($shadow...) {
+    -moz-text-shadow: $shadow;
+    -webkit-text-shadow: $shadow;
+    text-shadow: $shadow;
+  }
+  // /font and style text
+  
+  // background - IMG
+  @mixin backIMG($url, $size, $repeat, $position) {
+    background-image: $url;
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $position;
+  }
+  // /background - IMG
+  
+  // boder and size block
+  @mixin border($border: none, $radius: initial) {
+    border: $border;
+    border-radius: $radius;
+  }
+  @mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+  }
+  @mixin max-size($width, $height: $width) {
+    max-width: $width;
+    max-height: $height;
+  }
+  @mixin min-size($width, $height: $width) {
+    min-width: $width;
+    min-height: $height;
+  }
+  @mixin flex($justify: normal, $align: normal, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+  }
+  // /boder and size block
+  
+  // animation and transition
+  @mixin animation($name, $duration, $fillMode, $timingFunction) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-fill-mode: $fillMode;
+    animation-timing-function: $timingFunction;
+  }
+  
+  @mixin opacityAnim($opacity, $transition) {
+    opacity: $opacity;
+    transition: $transition;
+  }
+  @mixin transformAnim($transform, $transition) {
+    transform: $transform;
+    transition: $transition;
+  }
+  // /animation and transition
+  
+  // position
+  @mixin position(
+    $position,
+    $top: initial,
+    $bottom: initial,
+    $left: initial,
+    $right: initial
+  ) {
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+  }
+  // /position
+  
+  // media queries
+  @mixin responsive($breakpoint) {
+    @if $breakpoint == mobile {
+      @media (max-width: 576px) { @content; }
+    } @else if $breakpoint == tablet {
+      @media (max-width: 768px) { @content; }
+    } @else if $breakpoint == tabletMax {
+      @media (max-width: 1024px) { @content; }
+    } @else if $breakpoint == laptopMin {
+      @media (max-width: 1200px) { @content; }
+    } @else if $breakpoint == laptopMax {
+      @media (max-width: 1440px) { @content; }
+    }
+  }
+  // /media queries
+  
